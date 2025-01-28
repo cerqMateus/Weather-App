@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather App">
+    <meta name="keywords" content="weather, app, clima, temperatura, cidade">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/img/weather-forecast.png" type="image/x-icon"> 
+</head> 
+<body>
+    <div class="search-container">
+        <input type="text" id="city-input" placeholder="Digite o nome da cidade">
+        <button id="search-button">Pesquisar</button>
+    </div>
+    <div class="weather-card" id="weather-card">
+        <h1>Clima Atual</h1>
+        <p>Localização: <span id="location">-</span></p>
+        <p>Temperatura: <span id="temperature">-</span></p>
+        <p>Condição: <span id="condition">-</span></p>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
