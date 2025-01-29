@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Weather App">
-    <meta name="keywords" content="weather, app, clima, temperatura, cidade">
     <title>Weather App</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="/img/weather-forecast.png" type="image/x-icon"> 
-</head> 
+    <link rel="icon" href="/img/weather-forecast.png" type="image/x-icon">
+</head>
 <body>
     <div class="search-container">
         <input type="text" id="city-input" placeholder="Digite o nome da cidade">
         <button id="search-button">Pesquisar</button>
     </div>
-    <div class="weather-card" id="weather-card">
-        <h1>Clima Atual</h1>
-        <p>Localização: <span id="location">-</span></p>
-        <p>Temperatura: <span id="temperature">-</span></p>
-        <p>Condição: <span id="condition">-</span></p>
+    <div id="weather-card" class="weather-card">
+        <div class="location-container">
+            <div id="location"></div>
+            <div id="country-flag"></div>
+        </div>
+        <div class="temperature-container">
+            <div id="temperature"></div>
+            <div id="weather-icon"></div>
+            <div id="condition"></div>
+        </div>
+        
+        <div class="details-container">
+            <div id="uv-index"></div>
+            <div id="wind-speed"></div>
+        </div>
     </div>
     <div id="error-message" style="display: none; color: red; margin-top: 20px;"></div>
     <div id="loading-spinner" class="spinner" style="display: none;"></div>

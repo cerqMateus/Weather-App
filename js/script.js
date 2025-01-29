@@ -27,6 +27,25 @@ document.getElementById('search-button').addEventListener('click', function() {
             document.getElementById('temperature').textContent = `${data.main.temp}°C`;
             document.getElementById('condition').textContent = data.weather[0].description;
 
+            // Bandeira do país
+            const countryFlagUrl = `https://openweathermap.org/images/flags/${data.sys.country.toLowerCase()}.png`;
+            document.getElementById('country-flag').innerHTML = `<img src="${countryFlagUrl}" alt="Bandeira de ${data.sys.country}">`;
+
+            // Ícone da condição climática
+            const weatherIconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+            document.getElementById('weather-icon').innerHTML = `<img src="${weatherIconUrl}" alt="${data.weather[0].description}">`;
+
+            // Índice UV
+            const uvApiUrl = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${data.coord.lat}&lon=${data.coord.lon}`;
+            fetch(uvApiUrl)
+                .then(response => response.json())
+                .then(uvData => {
+                    document.getElementById('uv-index').textContent = `Índice UV: ${uvData.value}`;
+                });
+
+            // Velocidade do vento
+            document.getElementById('wind-speed').textContent = `Velocidade do vento: ${data.wind.speed} m/s`;
+
             // Seleciona uma classe de background aleatória da lista e define no body
             const randomClass = natureImages[Math.floor(Math.random() * natureImages.length)];
             document.body.className = randomClass;
